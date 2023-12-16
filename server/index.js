@@ -9,10 +9,10 @@ const adminbookingsRouter = require('./routes/admibookings.js');
 require("dotenv").config();
 app.get('/', (req, res) => res.send('/users ---> for users data, /rooms ---> for rooms data, /bookings ---> bookings page'));
 const corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "http://localhost:3000" 
 }
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use('/users', usersRouter);
 app.use('/rooms', roomsRouter);
 app.use('/bookings', bookingsRouter);
