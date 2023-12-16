@@ -71,7 +71,7 @@ export default function Formsumission({accomodation}) {
         Enddate,
       } = details;
       try{
-        const result = await axios.post('http://localhost:8082/bookings/book', {
+        const result = await axios.post('https://guest-house-booking-website.onrender.com/bookings/book', {
           Firstname,
           Lastname,
           Email,

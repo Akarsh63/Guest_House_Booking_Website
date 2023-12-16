@@ -20,7 +20,7 @@ const Table = ({ booking,setrefresh}) => {
   });
   const handleapprove=async (id)=>{
       await axios
-       .put("http://localhost:8082/admibookings/approve",{id})
+       .put("https://guest-house-booking-website.onrender.com/admibookings/approve",{id})
        .then((response) => {
          console.log(response);
          setrefresh((prev)=>!prev);
@@ -32,7 +32,7 @@ const Table = ({ booking,setrefresh}) => {
   }
   const handlereject=async (id)=>{
     await axios
-       .put("http://localhost:8082/admibookings/reject",{id})
+       .put("https://guest-house-booking-website.onrender.com/admibookings/reject",{id})
        .then((response) => {
          console.log(response);
          setrefresh((prev)=>!prev);

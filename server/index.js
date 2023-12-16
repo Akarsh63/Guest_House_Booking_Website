@@ -9,7 +9,7 @@ const adminbookingsRouter = require('./routes/admibookings.js');
 require("dotenv").config();
 app.get('/', (req, res) => res.send('/users ---> for users data, /rooms ---> for rooms data, /bookings ---> bookings page'));
 const corsOptions = {
-  origin: "http://localhost:3000" 
+  origin: "https://institute-guest-house-booking.onrender.com" 
 }
 app.use(express.json());
 app.use(cors(corsOptions));

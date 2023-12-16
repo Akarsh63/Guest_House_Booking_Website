@@ -15,7 +15,7 @@ export default function Allrooms({setaccomodation}) {
   const savedCheckout =sessionStorage.getItem('checkout');
   const [rooms, setRooms] = useState([]);
   const filterroom = async (room) => {
-    const detail = await axios.get(`http://localhost:8082/bookings/${room}`, {
+    const detail = await axios.get(`https://guest-house-booking-website.onrender.com/bookings/${room}`, {
       headers: {
         'x-token': cookies.access_token
       }
@@ -47,7 +47,7 @@ export default function Allrooms({setaccomodation}) {
     const fetchData = async () => {
       try {
         var totaltype=0;
-        const allrooms = await axios.get("http://localhost:8082/rooms/allrooms", {
+        const allrooms = await axios.get("https://guest-house-booking-website.onrender.com/rooms/allrooms", {
           headers: {
             'x-token': cookies.access_token
           }

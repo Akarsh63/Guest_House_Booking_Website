@@ -26,7 +26,7 @@ export default function FacultiesLogin({setfacultyLogin}) {
     console.log('22');
     try{
       const {username,password}=logininfo;
-      const user1=await axios.post('http://localhost:8082/users/facultylogin',{username,password});
+      const user1=await axios.post('https://guest-house-booking-website.onrender.com/users/facultylogin',{username,password});
       console.log(user1)
       if(user1.data.token){
         setCookies("faculty_access_token", user1.data.token);

@@ -24,7 +24,7 @@ export default function Loginpage({setStudentlogin}) {
     e.preventDefault();
     try{
       const {username,password}=logininfo;
-      const user = await axios.post('http://localhost:8082/users/login',{username,password});
+      const user = await axios.post('https://guest-house-booking-website.onrender.com/users/login',{username,password});
       setCookies("access_token", user.data.token);
       if(user.data.token){
         navigate('/home');

@@ -12,7 +12,7 @@ export default function Detailspage({accomodation,details,setdetails}) {
   const savedCheckin = sessionStorage.getItem('checkin');
   const savedCheckout = sessionStorage.getItem('checkout');
   const filterroom = async (room) => {
-    const detail = await axios.get(`http://localhost:8082/bookings/${room}`, {
+    const detail = await axios.get(`https://guest-house-booking-website.onrender.com/bookings/${room}`, {
       headers: {
         'x-token': cookies.access_token
       }
@@ -41,7 +41,7 @@ export default function Detailspage({accomodation,details,setdetails}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const allrooms = await axios.get("http://localhost:8082/rooms/allrooms", {
+        const allrooms = await axios.get("https://guest-house-booking-website.onrender.com/rooms/allrooms", {
           headers: {
             'x-token': cookies.access_token
           }

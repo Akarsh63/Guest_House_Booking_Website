@@ -50,7 +50,7 @@ export default function Registrationpage({setStudentlogin}) {
     event.preventDefault();
     try{
       const {username,email}=Registrationinfo;
-      const user = await axios.put('http://localhost:8082/users/clearotp',{username,email});
+      const user = await axios.put('https://guest-house-booking-website.onrender.com/users/clearotp',{username,email});
       console.log(user.data.Info)
     }
     catch(err){
@@ -65,7 +65,7 @@ export default function Registrationpage({setStudentlogin}) {
     event.preventDefault();
     try {
       const { username, email } = Registrationinfo;
-      const user = await axios.post('http://localhost:8082/users/resendotp', { username, email });
+      const user = await axios.post('https://guest-house-booking-website.onrender.com/users/resendotp', { username, email });
       console.log(user.data.Info);
       setTimer(60);
       setResendDisabled(true);
@@ -79,7 +79,7 @@ export default function Registrationpage({setStudentlogin}) {
     event.preventDefault();
     try{
       const {username,email,password,confirmpassword}=Registrationinfo;
-      const user = await axios.post('http://localhost:8082/users/register',{username,email,password,confirmpassword});
+      const user = await axios.post('https://guest-house-booking-website.onrender.com/users/register',{username,email,password,confirmpassword});
       console.log(user)
       setpage(1);
       setTimer(60);
@@ -93,7 +93,7 @@ export default function Registrationpage({setStudentlogin}) {
     event.preventDefault();
     try{
       const {username,email,password}=Registrationinfo;
-      const user = await axios.post('http://localhost:8082/users/verifyotp',{username,email,password,otp});
+      const user = await axios.post('https://guest-house-booking-website.onrender.com/users/verifyotp',{username,email,password,otp});
       console.log(user.data.Info)
       alert('User Created Successfully!')
       setStudentlogin(0)

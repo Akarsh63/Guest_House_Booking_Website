@@ -31,7 +31,7 @@ export default function Facultybookings() {
    useEffect(() => {
      const fetchData = async () => {
        try {
-         const response = await axios.get('http://localhost:8082/bookings/book', {
+         const response = await axios.get('https://guest-house-booking-website.onrender.com/bookings/book', {
            headers: {
              'x-token': cookies.faculty_access_token,
            },

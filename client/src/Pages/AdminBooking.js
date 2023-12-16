@@ -28,14 +28,14 @@ const Newbook = () => {
   useEffect(() => {
     const fetchAvailableRooms = async () => {
         try {
-          const roomsResponse = await axios.get(`http://localhost:8082/rooms/allfreerooms`, {
+          const roomsResponse = await axios.get(`https://guest-house-booking-website.onrender.com/allfreerooms`, {
             headers: {
               'x-token': cookies.admin_access_token
             }
           });
           const allRooms = roomsResponse.data.Rooms;
           console.log(allRooms)
-          const bookingsResponse = await axios.get(`http://localhost:8082/admibookings/bookings`, {
+          const bookingsResponse = await axios.get(`https://guest-house-booking-website.onrender.com/admibookings/bookings`, {
             headers: {
               'x-token': cookies.admin_access_token
             }
@@ -187,7 +187,7 @@ const Newbook = () => {
 
     console.log(info);
 
-    await axios.post("http://localhost:8082/admibookings/newbook", {
+    await axios.post("https://guest-house-booking-website.onrender.com/admibookings/newbook", {
       fname: fname,
       lname: lname,
       email: email,

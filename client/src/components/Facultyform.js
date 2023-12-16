@@ -65,7 +65,7 @@ export default function Facultyform() {
   // const [singleRooms]=useState(['104','105','106']);
   // const [deluxeRooms]=useState(['107','108','109']);
   const filterroom = async (room) => {
-    const detail = await axios.get(`http://localhost:8082/bookings/${room}`, {
+    const detail = await axios.get(`https://guest-house-booking-website.onrender.com/bookings/${room}`, {
       headers: {
         'x-token': cookies.faculty_access_token
       }
@@ -99,7 +99,7 @@ export default function Facultyform() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const allrooms = await axios.get("http://localhost:8082/rooms/allrooms", {
+        const allrooms = await axios.get("https://guest-house-booking-website.onrender.com/rooms/allrooms", {
           headers: {
             'x-token': cookies.faculty_access_token
           }
@@ -205,7 +205,7 @@ export default function Facultyform() {
         const endformattedDate = `${enddateObject.getDate()}-${enddateObject.getMonth() + 1}-${enddateObject.getFullYear()}`;
 
         const response = await axios.post(
-        'http://localhost:8082/bookings/book',
+        'https://guest-house-booking-website.onrender.com/bookings/book',
         {
           Firstname: detail.fname1,
           Lastname: detail.lname1,
